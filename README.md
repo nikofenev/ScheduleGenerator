@@ -1,6 +1,9 @@
 # ScheduleGenerator
 Individual Project
 
+### Problem Statement 
+It is hard to believe that in 2017 there are workplaces that still use Excel for creating their schedules. There are few alternative softwares on the market, but most ScheduleGenerators are part of a bigger software package that a company must purchase in order to use just this one function. Schedule Generator will do exactly that, focus on creating employee schedules based on their availability.
+
 ### Project Technologies/Techniques 
 
 * Security/Authentication
@@ -11,8 +14,6 @@ Individual Project
   * Store users and roles
   * Store schedule information
 * Web Services or APIs
-  * 
-  * 
 *  (independent research topic)
 * Logging
   * Configurable logging using Log4J. In production, only errors will normally be logged, but logging at a debug level can be turned on to facilitate trouble-shooting. 
