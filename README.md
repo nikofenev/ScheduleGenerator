@@ -19,7 +19,13 @@ It is hard to believe that in 2017 there are workplaces that still use Excel for
   * Configurable logging using Log4J. In production, only errors will normally be logged, but logging at a debug level can be turned on to facilitate trouble-shooting. 
 * Site and database hosted on AWS
 * Unit Testing
-  * JUnit tests to achieve 80% code coverage 
+  * JUnit tests to achieve 80% code coverage
+  
+  ### Design
+  
+  * [Application Flow](applicationFlow.md)
+  * [Screen Design](Skedu.rp)
+  * Database Design
   
   ### [Time Log](TimeLog.md) 
   ### [Project Plan](ProjectPlan.md) 
