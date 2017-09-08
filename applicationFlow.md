@@ -6,7 +6,7 @@
 1. Users cannot sign up. All users are given username and password from their employer.
 1. They can change their password after the first time they log in.
 
-### User Sign In
+### User Log In
 
 1. User chooses Log in from the welcome page.
 1. User enters username and password on form and submits.
