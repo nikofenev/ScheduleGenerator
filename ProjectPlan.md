@@ -2,20 +2,20 @@
 
 ### Week 1
 - [X] Create project repository on GitHub
-- [ ] Complete Problem Statement
+- [X] Complete Problem Statement
 - [X] Determine possible Web Services or APIs to use
 - [X] List technologies and how they will be used
 - [X] Time log entries
 - [X] Begin project plan
 
 ### Week 2
-- [ ] Document application flow - wireframes have clickable links in the online version.
-- [ ] Complete screen design (on paper)
+- [X] Document application flow - wireframes have clickable links in the online version.
+- [X] Complete screen design
 - [ ] Create project structure in IntelliJ
 - [ ] Add project to repository
 - [ ] Complete database design
 - [ ] Begin creating JSPs
-- [ ] Time log entries
+- [X] Time log entries
 - [ ] Complete project plan. Based on the design should be able to lay out more detail.
 
 ### Week 3
