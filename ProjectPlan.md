@@ -40,41 +40,57 @@
 
 ### Week 5
 
+- [ ] Time log entries
+- [ ] Create DAO for employees
+- [ ] Create DAO for schedules
+- [ ] Create DAO for stores
+- [ ] Create display schedules
+- [ ] Create display schedules functionality
+- [ ] Add tests for new functionality
 
 ### Week 6
-
+- [ ] Time log entries
+- [ ] Create add store  functionality
+- [ ] Create add employee functionality
 
 ### Week 7
-
+- [ ] Time log entries
+- [ ] Add search functionality
+- [ ] Determine how to add paging of search results
 
 ### Week 8
+- [ ] Time log entries
+- [ ] Implement paging of search results
 - [ ] Code review
 
 ### Week 9
-
+- [ ] Time log entries
+- [ ] Create databse
+- [] Set up authentication and db access
+- [ ] Add password reset/reminder function
 
 ### Week 10
-
+- [] Time log entries
 
 ### Week 11
-
+- [] Time log entries
 
 ### Week 12
-
+- [ ] Time log entries
 
 ### Week 13
-
+- [] Time log entries
 
 ### Week 14
-
+- [ ] Time log entries
 - [ ] Create final presentation
 
 ### Week 15
 - [ ] Final Presentation
-
+- [ ] Time log entries
 
 ### Week 16
-
+- [ ] Time log entries
 
 
 
