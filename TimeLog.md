@@ -7,7 +7,6 @@
 | 09/04/17 | started sketching the UI design and thinking about database schema. | 2  |   |
 | 09/08/17 | completed application flow  | 3 |     |
 | 09/08/17 | copleted screen design with AXURE | 3 |  |
-
 | 09/17/17 | created project architecture | 1 |  |
 
 
