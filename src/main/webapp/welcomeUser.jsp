@@ -2,11 +2,10 @@
 <c:import url="jsp/head.jsp" />
 <html>
 
-<title>Home</title>
+<title>My Info</title>
 
 <body>
-    <c:import url="logIn.jsp" />
+    <c:import url="userLoggedIn.jsp" />
 </body>
 
 </html>
-

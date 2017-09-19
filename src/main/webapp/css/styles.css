@@ -1,3 +1,7 @@
+body {
+    background: #eee url(../images/con.jpg);
+}
+
 html,body{
     position: relative;
     height: 100%;
