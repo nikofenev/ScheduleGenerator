@@ -1,7 +1,7 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.User;
-
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,14 +10,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.*;
-
 /**
  * Access users in the user table.
  *
  * @author nfenev
  */
-public class UserData {
+public class UserDao {
 
     private final Logger logger = Logger.getLogger(this.getClass());
 
@@ -38,9 +36,9 @@ public class UserData {
             }
             database.disconnect();
         } catch (SQLException e) {
-            logger.error("SearchUser.getAllUsers()...SQL Exception: ", e);
+            logger.error("getAllUsers()...SQL Exception: ", e);
         } catch (Exception e) {
-            logger.error("SearchUser.getAllUsers()...Exception: ", e);
+            logger.error("getAllUsers()...Exception: ", e);
         }
         return users;
     }
