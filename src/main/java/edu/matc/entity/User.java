@@ -1,14 +1,35 @@
 package edu.matc.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+
 /**
  * A class to represent a user.
  *
  * @author nfenev
  */
+@Entity
+@Table(name = "users")
 public class User {
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    @Column(name = "id")
     private String userid;
+
+    @Id
+    @Column(name = "user_name")
+    private String userName;
+
+    @Column(name = "user_pass")
+    private String userPass;
+
 
     /**
      * Instantiates a new User.
@@ -23,10 +44,12 @@ public class User {
      * @param lastName  the last name
      * @param userid    the userid
      */
-    public User(String firstName, String lastName, String userid) {
+    public User(String firstName, String lastName, String userid, String userName, String userPass) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userid = userid;
+        this.userName = userName;
+        this.userPass = userPass;
     }
 
 
@@ -84,12 +107,45 @@ public class User {
         this.userid = userid;
     }
 
+    /**
+     * Gets userName.
+     * @return the userName
+     */
+    public String getUserName() {
+        return userName;
+    }
+
+    /**
+     * Sets userName.
+     * @param userName the userName
+     */
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    /**
+     * Gets the userPass.
+     * @return userPass
+     */
+    public String getUserPass() {
+        return userPass;
+    }
+
+    /**
+     * Sets the userPass.
+     * @param userPass the userPass
+     */
+    public void setUserPass(String userPass) {
+        this.userPass = userPass;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", userid='" + userid + '\'' +
+                ", userName='" + userName + '\'' +
                 '}';
     }
 
