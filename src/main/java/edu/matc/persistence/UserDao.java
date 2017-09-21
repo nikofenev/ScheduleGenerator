@@ -46,7 +46,7 @@ public class UserDao {
     private User createUserFromResults(ResultSet results) throws SQLException {
         User user = new User();
         user.setLastName(results.getString("last_name"));
-        user.setUserid(results.getString("id"));
+        user.setUserid(Integer.parseInt(results.getString("id")));
         user.setFirstName(results.getString("first_name"));
         return user;
     }

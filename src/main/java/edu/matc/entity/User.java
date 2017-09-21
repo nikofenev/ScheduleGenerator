@@ -3,6 +3,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * A class to represent a user.
@@ -18,12 +19,12 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
+    @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "id")
-    private String userid;
+    private int userid;
 
-    @Id
     @Column(name = "user_name")
     private String userName;
 
@@ -44,7 +45,7 @@ public class User {
      * @param lastName  the last name
      * @param userid    the userid
      */
-    public User(String firstName, String lastName, String userid, String userName, String userPass) {
+    public User(String firstName, String lastName, int userid, String userName, String userPass) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userid = userid;
@@ -94,7 +95,7 @@ public class User {
      *
      * @return the userid
      */
-    public String getUserid() {
+    public int getUserid() {
         return userid;
     }
 
@@ -103,7 +104,7 @@ public class User {
      *
      * @param userid the userid
      */
-    public void setUserid(String userid) {
+    public void setUserid(int userid) {
         this.userid = userid;
     }
 
@@ -149,4 +150,10 @@ public class User {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object obj) {
+
+        //continue here
+
+    }
 }

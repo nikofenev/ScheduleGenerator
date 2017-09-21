@@ -13,8 +13,6 @@ public class UserDaoTest {
 
     UserDao userDao;
 
-    Logger logger;
-
     @Before
     public void setup() throws Exception {
         userDao = new UserDao();
