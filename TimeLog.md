@@ -8,5 +8,7 @@
 | 09/08/17 | created application flow  | 3 |     |
 | 09/08/17 | created screen design with AXURE | 3 |  |
 | 09/17/17 | created project architecture | 1 |  |
-
-
+| 09/19/17 | created DAO | 2 | | 
+| 09/20/17 | implemented Hibernate | 3 | |
+| 09/20/17 | tests DAO | 2 | |
+| 09/20/17 | began creating database schema | 2 | |
