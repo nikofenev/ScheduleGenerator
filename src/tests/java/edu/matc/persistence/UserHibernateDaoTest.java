@@ -70,12 +70,12 @@ public class UserHibernateDaoTest {
 
     @Test
     public void updateTest() {
-        userDummy.setFirstName("Nikolay");
+        userDummy.setFirstName("NIKOLAY");
 
         userHibernateDao.update(userDummy);
 
-        //assertEquals("Original name Nikolay, did it update?", "Messi", userDummy.getFirstName());
-        //logger.info(userDummy);
+        assertEquals("Original name Nikolay, did it update?", "NIKOLAY", userDummy.getFirstName());
+        logger.info(userDummy);
     }
 
     @Test
