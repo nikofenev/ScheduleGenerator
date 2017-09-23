@@ -153,7 +153,11 @@ public class User {
     @Override
     public boolean equals(Object obj) {
 
-        //continue here
+        User thisUser = (User) obj;
 
+        return thisUser.userid == userid //if userId are same
+                && thisUser.firstName.equalsIgnoreCase(firstName) //if firstNames are same
+                && thisUser.lastName.equalsIgnoreCase(lastName) // if lastNames are same
+                && thisUser.userName.equalsIgnoreCase(userName); // if userNames are same
     }
 }

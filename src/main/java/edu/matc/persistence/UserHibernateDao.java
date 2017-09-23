@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
@@ -61,7 +62,7 @@ public class UserHibernateDao {
      * @return User
      */
     public List<User> getUsersByLastName(String lastName) {
-        List<User> users = new ArrayList<User>();
+        List users = new ArrayList<User>();
         Session session = null;
         try {
             session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -77,4 +78,88 @@ public class UserHibernateDao {
         }
         return users;
     }
+
+    /** save new user
+     * @param user user to insert
+     * @return id of the inserted user
+     */
+    public int insert(User user) {
+        int id = 0;
+        Transaction transaction = null;
+        Session session = null;
+        try {
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+            id = (int) session.save(user);
+            transaction.commit();
+        } catch (HibernateException he){
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (HibernateException he2) {
+                    logger.error("Error rolling back save of user: " + user, he2);
+                }
+            }
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return id;
+    }
+
+    /** update  user
+     * @param user user to update
+     */
+    public void update(User user) {
+        Transaction transaction = null;
+        Session session = null;
+        try {
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+            session.saveOrUpdate(user);
+            transaction.commit();
+        } catch (HibernateException he){
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (HibernateException he2) {
+                    logger.error("Error rolling back save of user: " + user, he2);
+                }
+            }
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
+
+    /** delete  user
+     * @param id user with id to delete
+     */
+    public void delete(int id) {
+        Transaction transaction = null;
+        Session session = null;
+        try {
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+            User user =
+                    (User)session.get(User.class, id);
+            session.delete(user);
+            transaction.commit();
+        } catch (HibernateException he){
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (HibernateException he2) {
+                    logger.error("Error rolling back deleting of user: " + id, he2);
+                }
+            }
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
+
 }
