@@ -1,4 +1,11 @@
-<h2>Weclome</h2>
-<div class="container">
+<%@include file="jsp/taglib.jsp" %>
+<c:import url="jsp/head.jsp"/>
+<html>
 
-</div>
+<title>Welcome</title>
+
+<body>
+<c:import url="userLoggedInActual.jsp"/>
+</body>
+
+</html>
