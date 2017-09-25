@@ -12,3 +12,6 @@
 | 09/20/17 | implemented Hibernate | 3 | |
 | 09/20/17 | tests DAO | 2 | |
 | 09/20/17 | began creating database schema | 2 | |
+| 09/22/17 | created login JSP | 3 | |
+| 09/23/17 | created generator for hours dropdownlist | 2 | |
+| 09/24/17 | created logged in JSPs| 2 | |
