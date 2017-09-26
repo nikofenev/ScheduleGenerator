@@ -55,4 +55,4 @@ fabric.properties
 *.log
 
 #ignore the resources folder
-/resources/
+resources/
