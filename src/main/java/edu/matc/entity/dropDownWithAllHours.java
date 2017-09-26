@@ -16,7 +16,11 @@ public class dropDownWithAllHours {
         while (hourAM < 13) {
             theWholeList.append("<option value=\"");
             theWholeList.append(hourAM);
-            theWholeList.append(":00 AM\">");
+            if(hourAM == 10) {
+                theWholeList.append(":00 AM\" selected=\"selected\">");
+            } else {
+                theWholeList.append(":00 AM\">");
+            }
             theWholeList.append(hourAM);
             if (hourAM == 12) {
                 theWholeList.append(":00 PM</option>");
@@ -35,7 +39,6 @@ public class dropDownWithAllHours {
             hourPM += 1;
         }
 
-        logger.info(theWholeList);
         return theWholeList;
     }
 }

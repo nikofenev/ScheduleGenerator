@@ -1,8 +1,6 @@
 package edu.matc.controller;
 
-import edu.matc.entity.User;
 import edu.matc.entity.dropDownWithAllHours;
-import edu.matc.persistence.UserHibernateDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,7 +13,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-/** Servlet for the index
+/** Servlet for log in
  *  web page.
  * @author nfenev
  */
