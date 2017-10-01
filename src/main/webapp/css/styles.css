@@ -149,3 +149,7 @@ html,body{
     width: 20em;
     float: right;
 }
+
+.bootstrap-datetimepicker-widget tr:hover {
+    background-color: #808080;
+}

@@ -2,7 +2,7 @@ package edu.matc.entity;
 
 import org.apache.log4j.Logger;
 
-public class dropDownWithAllHours {
+public class DropDownWithAllHours {
 
     StringBuilder theWholeList;
     private final Logger logger = Logger.getLogger(this.getClass());

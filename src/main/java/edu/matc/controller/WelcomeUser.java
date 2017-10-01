@@ -1,6 +1,7 @@
 package edu.matc.controller;
 
-import edu.matc.entity.dropDownWithAllHours;
+import edu.matc.entity.DropDownWithAllHours;
+import edu.matc.entity.GenerateWeeks;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,7 +23,7 @@ import java.util.Map;
         urlPatterns = {"/welcomeUser"}
 )
 
-public class welcomeUser extends HttpServlet {
+public class WelcomeUser extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -47,7 +48,10 @@ public class welcomeUser extends HttpServlet {
 
         }
 
-        dropDownWithAllHours stringWithAllHours = new dropDownWithAllHours();
+        GenerateWeeks currentWeek = new GenerateWeeks();
+        currentWeek.currentWeekStartAndEnd();
+
+        DropDownWithAllHours stringWithAllHours = new DropDownWithAllHours();
         StringBuilder allHoursString = stringWithAllHours.dropDownListWithHours();
 
         req.setAttribute("hoursList", allHoursString);

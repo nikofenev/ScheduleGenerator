@@ -7,10 +7,14 @@
     <h3></h3>
         <form class="form-horizontal" action="saveAvailability" method="POST">
             <div class="form-group">
-                <select class="form-control selectWeek">
-                    <option>October 1st to October 7th</option>
-                </select>
+                <div class='input-group selectWeek date'>
+                    <input type='text' class="form-control selectWeek" id='weeklyDatePicker' placeholder="Select Week"  />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
             </div>
+
             <field><legend>My Availability</legend></field>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="sundayFrom">Sunday:</label>

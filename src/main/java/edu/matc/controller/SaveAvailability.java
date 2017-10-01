@@ -1,8 +1,5 @@
 package edu.matc.controller;
 
-import edu.matc.entity.User;
-import edu.matc.entity.dropDownWithAllHours;
-import edu.matc.persistence.UserHibernateDao;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -11,12 +8,8 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 /** Servlet for the index
  *  web page.
@@ -27,17 +20,20 @@ import java.util.Set;
         urlPatterns = {"/saveAvailability"}
 )
 
-public class saveAvailability extends HttpServlet {
+public class SaveAvailability extends HttpServlet {
     private final Logger logger = Logger.getLogger(this.getClass());
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Map<String, String[]> map = req.getParameterMap();
-
-        for (Map.Entry<String, String[]> entry : map.entrySet()) {
-            logger.info(entry.getKey());
-            logger.info(entry.getValue());
+        Map map = req.getParameterMap();
+        for (Object o : map.keySet()) {
+            String key = (String) o;
+            String[] value = (String[]) map.get(key);
+            logger.info(key);
+            for (String item : value) {
+                logger.info(item);
+            }
         }
 
         /* String sundayFrom = req.getParameter("sundayFrom");
