@@ -5,7 +5,7 @@
 <title>Welcome</title>
 
 <body>
-    <c:import url="userLoggedInActual.jsp"/>
+<c:import url="adminLoggedInActual.jsp"/>
 </body>
 
 </html>

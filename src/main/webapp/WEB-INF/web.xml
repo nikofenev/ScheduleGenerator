@@ -5,5 +5,44 @@
 <web-app   xmlns="http://java.sun.com/xml/ns/javaee"
            version="2.5">
 
+
+  <!-- Tell the server to use form-based authentication. -->
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/logIn.jsp</form-login-page>
+      <form-error-page>/logIn-error.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
+
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Schedu</web-resource-name>
+      <url-pattern>/welcomeUser</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registered-user</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Schedu</web-resource-name>
+      <url-pattern>/welcomeAdmin</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>administrator</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+
+  <security-role>
+    <role-name>registered-user</role-name>
+  </security-role>
+  <security-role>
+    <role-name>administrator</role-name>
+  </security-role>
+
   <display-name>Archetype Created Web Application</display-name>
 </web-app>

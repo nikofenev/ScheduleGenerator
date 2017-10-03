@@ -1,7 +1,5 @@
 package edu.matc.controller;
 
-import org.apache.log4j.Logger;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.*;
@@ -11,24 +9,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-
-/** Servlet for the index
- *  web page.
+/** Servlet for admin.
  * @author nfenev
  */
 
 @WebServlet(
-    urlPatterns = {"/homePage"}
+        urlPatterns = {"/welcomeAdmin"}
 )
 
-public class ScheduController extends HttpServlet {
-
-    private final Logger logger = Logger.getLogger(this.getClass());
+public class WelcomeAdmin extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("java/");
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/adminLoggedIn.jsp");
         dispatcher.forward(req, resp);
     }
 }

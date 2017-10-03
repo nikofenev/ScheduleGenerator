@@ -1,12 +1,11 @@
-<%@include file="jsp/taglib.jsp"%>
-<c:import url="jsp/head.jsp" />
+<%@include file="jsp/taglib.jsp" %>
+<c:import url="jsp/head.jsp"/>
 <html>
 
-<title>Home</title>
+<title>Welcome</title>
 
 <body>
-    <c:import url="logIn.jsp" />
+    <c:import url="indexActual.jsp" />
 </body>
 
 </html>
-

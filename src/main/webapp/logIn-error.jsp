@@ -2,10 +2,11 @@
 <c:import url="jsp/head.jsp"/>
 <html>
 
-<title>Welcome</title>
+<title>Error</title>
 
 <body>
-    <c:import url="userLoggedInActual.jsp"/>
+<c:import url="logIn.jsp"/>
+<p class="alert-danger">Log in failed</p>
 </body>
 
 </html>
