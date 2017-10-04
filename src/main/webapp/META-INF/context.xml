@@ -1,7 +1,7 @@
 <Context docBase="Schedu" path="/Schedu" reloadable="true">
     <Realm className="org.apache.catalina.realm.JDBCRealm"
            driverName="com.mysql.jdbc.Driver"
-           connectionURL="jdbc:mysql://localhost:3306/schedu?user=tomcat&amp;password=tomcat"
+           connectionURL="jdbc:mysql://localhost:3306/schedu?user=root&amp;password=student"
            userTable="users" userNameCol="user_name" userCredCol="user_pass"
            userRoleTable="user_roles" roleNameCol="role_name" >
     </Realm>

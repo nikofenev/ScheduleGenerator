@@ -16,6 +16,59 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `userAvailability`
+--
+
+DROP TABLE IF EXISTS `userAvailability`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `userAvailability` (
+  `id` int(7) NOT NULL,
+  `work_date_day` date NOT NULL,
+  `available_from` int(2) NOT NULL,
+  `available_to` int(2) NOT NULL,
+  `typePermOrTemp` varchar(10) NOT NULL,
+  `users_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `userAvailability`
+--
+
+LOCK TABLES `userAvailability` WRITE;
+/*!40000 ALTER TABLE `userAvailability` DISABLE KEYS */;
+/*!40000 ALTER TABLE `userAvailability` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `userShcedule`
+--
+
+DROP TABLE IF EXISTS `userShcedule`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `userShcedule` (
+  `id` int(7) NOT NULL,
+  `start_work` int(2) NOT NULL,
+  `end_work` int(2) NOT NULL,
+  `work_date` date NOT NULL,
+  `users_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `userShcedule`
+--
+
+LOCK TABLES `userShcedule` WRITE;
+/*!40000 ALTER TABLE `userShcedule` DISABLE KEYS */;
+/*!40000 ALTER TABLE `userShcedule` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user_roles`
 --
 
@@ -35,6 +88,7 @@ CREATE TABLE `user_roles` (
 
 LOCK TABLES `user_roles` WRITE;
 /*!40000 ALTER TABLE `user_roles` DISABLE KEYS */;
+INSERT INTO `user_roles` VALUES ('admin','administrator'),('niko','registered-user');
 /*!40000 ALTER TABLE `user_roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +117,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'neymar','neymar','Neymar','Junior'),(2,'niko','niko','Nikolay','Fenev');
+INSERT INTO `users` VALUES (1,'neymar','neymar','Neymar','Junior'),(2,'niko','niko','Nikolay','Fenev'),(3,'admin','admin','Admin','Adminov');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -76,4 +130,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-21 23:12:36
+-- Dump completed on 2017-10-02 19:40:40
