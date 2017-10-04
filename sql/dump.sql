@@ -29,7 +29,9 @@ CREATE TABLE `userAvailability` (
   `available_to` int(2) NOT NULL,
   `typePermOrTemp` varchar(10) NOT NULL,
   `users_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `userAvailability_users` (`users_id`),
+  CONSTRAINT `userAvailability_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -43,29 +45,31 @@ LOCK TABLES `userAvailability` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `userShcedule`
+-- Table structure for table `userSchedule`
 --
 
-DROP TABLE IF EXISTS `userShcedule`;
+DROP TABLE IF EXISTS `userSchedule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `userShcedule` (
+CREATE TABLE `userSchedule` (
   `id` int(7) NOT NULL,
   `start_work` int(2) NOT NULL,
   `end_work` int(2) NOT NULL,
   `work_date` date NOT NULL,
   `users_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `userScedule_users` (`users_id`),
+  CONSTRAINT `userScedule_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `userShcedule`
+-- Dumping data for table `userSchedule`
 --
 
-LOCK TABLES `userShcedule` WRITE;
-/*!40000 ALTER TABLE `userShcedule` DISABLE KEYS */;
-/*!40000 ALTER TABLE `userShcedule` ENABLE KEYS */;
+LOCK TABLES `userSchedule` WRITE;
+/*!40000 ALTER TABLE `userSchedule` DISABLE KEYS */;
+/*!40000 ALTER TABLE `userSchedule` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -100,15 +104,15 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `id` int(7) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `user_name` varchar(15) NOT NULL,
   `user_pass` varchar(15) NOT NULL,
-  `first_name` varchar(25) NOT NULL,
+  `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_id_uindex` (`id`),
-  UNIQUE KEY `users_user_name_uindex` (`user_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `job_title` varchar(20) NOT NULL,
+  `performance` int(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,7 +121,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'neymar','neymar','Neymar','Junior'),(2,'niko','niko','Nikolay','Fenev'),(3,'admin','admin','Admin','Adminov');
+INSERT INTO `users` VALUES (1,'admin','admin','Admin','Adminov','manager',5),(2,'niko','niko','Nikolay','Fenev','bartender',5);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -130,4 +134,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-02 19:40:40
+-- Dump completed on 2017-10-04 13:02:15

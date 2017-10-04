@@ -150,6 +150,11 @@ html,body{
     float: right;
 }
 
+.createNewEmployee {
+    float: right;
+    margin: 2em;
+}
+
 .bootstrap-datetimepicker-widget tr:hover {
     background-color: #808080;
 }

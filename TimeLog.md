@@ -15,3 +15,8 @@
 | 09/22/17 | created login JSP | 3 | |
 | 09/23/17 | created generator for hours dropdownlist | 2 | |
 | 09/24/17 | created logged in JSPs| 2 | |
+| 09/29/17 | deployed to aws | 3 | |
+| 09/30/17 | created admin jsps | 2 | |
+| 10/01/17 | added more tables to db | 3 | |
+| 10/03/17 | added user authentication locally | 3 | |
+| 10/03/17 | added user authentication on AWS | 3 | | 

@@ -31,6 +31,12 @@ public class User {
     @Column(name = "user_pass")
     private String userPass;
 
+    @Column(name = "job_title")
+    private String jobTitle;
+
+    @Column(name = "performance")
+    private int performance;
+
 
     /**
      * Instantiates a new User.
@@ -44,13 +50,17 @@ public class User {
      * @param firstName the first name
      * @param lastName  the last name
      * @param userid    the userid
+     * @param jobTitle  the jobTitle
+     * @param performance performance
      */
-    public User(String firstName, String lastName, int userid, String userName, String userPass) {
+    public User(String firstName, String lastName, int userid, String userName, String userPass, String jobTitle, int performance) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userid = userid;
         this.userName = userName;
         this.userPass = userPass;
+        this.jobTitle = jobTitle;
+        this.performance = performance;
     }
 
 
@@ -140,13 +150,48 @@ public class User {
         this.userPass = userPass;
     }
 
+    /**
+     * Gets the setJobTitle.
+     * @return jobTitle
+     */
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    /**
+     * Sets the userPass.
+     * @param jobTitle the userPass
+     */
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
+    /**
+     * Gets the performance.
+     * @return performance
+     */
+    public int getPerformance() {
+        return performance;
+    }
+
+    /**
+     * Sets the perofrmance.
+     *
+     * @param performance the performance
+     */
+    public void setPerformance(int performance) {
+        this.performance = performance;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", userid='" + userid + '\'' +
-                ", userName='" + userName + '\'' +
+                "  firstName='"   + firstName + '\'' +
+                ", lastName='"    + lastName + '\'' +
+                ", userid='"      + userid + '\'' +
+                ", userName='"    + userName + '\'' +
+                ", jobTitle='"    + jobTitle + '\'' +
+                ", performance='" + performance + '\'' +
                 '}';
     }
 
