@@ -11,37 +11,34 @@
 ### Week 2
 - [X] Document application flow - wireframes have clickable links in the online version.
 - [X] Complete screen design
-- [ ] Create project structure in IntelliJ
-- [ ] Add project to repository
-- [ ] Complete database design
-- [ ] Begin creating JSPs
+- [X] Create project structure in IntelliJ
+- [X] Add project to repository
+- [X] Complete database design
+- [X] Begin creating JSPs
 - [X] Time log entries
-- [ ] Complete project plan. Based on the design should be able to lay out more detail.
+- [X] Complete project plan. Based on the design should be able to lay out more detail.
 
 ### Week 3
-- [ ] Complete remaining JSPs
-- [ ] Add in bootstrap
+- [X] Complete remaining JSPs
+- [X] Add in bootstrap
 - [ ] Create database and all tables/columns locally
-- [ ] Time log entries
-- [ ] Determine independent research topic
-- [ ] Create class diagram
-- [ ] Set up logging
-- [ ] Set up unit testing
+- [X] Time log entries
+- [X] Determine independent research topic
+- [X] Set up logging
+- [X] Set up unit testing
 
 ### Week 4
-- [ ] Add Hibernate config
-- [ ] Create DAO for user crud
-- [ ] Add unit tests for DAO
-- [ ] Add user login  
-- [ ] Add user registration
-- [ ] Time log entries
-- [ ] Add Maven for building
-- [ ] Add entities for remaining tables
+- [X] Add Hibernate config
+- [X] Create DAO for user crud
+- [X] Add unit tests for DAO
+- [X] Add user login  
+- [X] Time log entries
+- [X] Add Maven for building
 
 ### Week 5
 
-- [ ] Time log entries
-- [ ] Create DAO for employees
+- [X] Time log entries
+- [X] Create DAO for employees
 - [ ] Create DAO for schedules
 - [ ] Create DAO for stores
 - [ ] Create display schedules
@@ -49,7 +46,8 @@
 - [ ] Add tests for new functionality
 
 ### Week 6
-- [ ] Time log entries
+- [X] Time log entries
+- [X] Add authentication
 - [ ] Create add store  functionality
 - [ ] Create add employee functionality
 
