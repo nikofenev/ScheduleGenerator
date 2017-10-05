@@ -27,7 +27,7 @@ Shedu  will automatically generate schedules each week, based on store hours, sh
   
   * [Application Flow](applicationFlow.md)
   * [Screen Design](Skedu.rp)
-  * Database Design
+  * [Database Design](dbDesign.png)
   
   ### [Time Log](TimeLog.md) 
   ### [Project Plan](ProjectPlan.md) 

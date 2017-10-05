@@ -150,7 +150,7 @@ html,body{
     float: right;
 }
 
-.createNewEmployee {
+.createNewEmployee, .logOut {
     float: right;
     margin: 2em;
 }

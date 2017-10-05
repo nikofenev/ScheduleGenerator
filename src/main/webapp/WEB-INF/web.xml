@@ -18,7 +18,7 @@
 
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>Schedu</web-resource-name>
+      <web-resource-name>ScheduUser</web-resource-name>
       <url-pattern>/welcomeUser</url-pattern>
     </web-resource-collection>
     <auth-constraint>
@@ -28,7 +28,7 @@
 
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>Schedu</web-resource-name>
+      <web-resource-name>ScheduAdmin</web-resource-name>
       <url-pattern>/welcomeAdmin</url-pattern>
     </web-resource-collection>
     <auth-constraint>
