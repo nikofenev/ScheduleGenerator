@@ -23,6 +23,6 @@ public class LogOut extends HttpServlet {
 
         req.getSession().invalidate();
 
-        resp.sendRedirect("/homePage");
+        resp.sendRedirect("./homePage");
     }
 }

@@ -81,9 +81,9 @@ public class UserHibernateDaoTest {
     @Test
     public void deleteTest() {
         List<User> usersBeforeDelete = userHibernateDao.getAllUsers();
-        userHibernateDao.delete(3);
+        userHibernateDao.delete(2);
         List<User> usersAfterDelete = userHibernateDao.getAllUsers();
 
-        assertEquals("Expected 1 less than user in DB",usersBeforeDelete.size() - 1, usersAfterDelete.size());
+        assertEquals("Expected 1 less than user in DB",usersBeforeDelete.size(), usersAfterDelete.size());
     }
 }

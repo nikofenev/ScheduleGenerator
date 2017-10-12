@@ -155,6 +155,12 @@ html,body{
     margin: 2em;
 }
 
-.bootstrap-datetimepicker-widget tr:hover {
+.selectWeek tr:hover {
     background-color: #808080;
+}
+
+.dateInputBoxHide {
+    background: transparent;
+    border: none;
+    width: 7em;
 }

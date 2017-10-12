@@ -39,6 +39,7 @@ public class DropDownWithAllHours {
             hourPM += 1;
         }
 
+        theWholeList.append("<option>None</option>");
         return theWholeList;
     }
 }
