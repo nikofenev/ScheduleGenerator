@@ -1,7 +1,6 @@
 package edu.matc.controller;
 
 import edu.matc.entity.User;
-import edu.matc.persistence.UserHibernateDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,10 +25,8 @@ public class MyEmployees extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        UserHibernateDao allUsers = new UserHibernateDao();
-        List<User> users = allUsers.getAllUsers();
 
-        req.setAttribute("allUsers", users);
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/myEmployees.jsp");
         dispatcher.forward(req, resp);
     }

@@ -3,6 +3,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 
 /**
@@ -10,8 +11,7 @@ import javax.persistence.*;
  *
  * @author nfenev
  */
-@Entity
-@Table(name = "users")
+@Entity(name = "users")
 public class User {
     @Column(name = "first_name")
     private String firstName;
