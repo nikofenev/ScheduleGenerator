@@ -1,6 +1,7 @@
 package edu.matc.entity;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.ManyToAny;
 
 import javax.persistence.*;
 
@@ -8,20 +9,11 @@ import javax.persistence.*;
 @Table(name = "userAvailabilityPermanent")
 public class UserAvailabilityPermanent {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
-    @Column(name = "id")
     private int userAvailabilityId;
-
-    @Column(name="work_day")
     private String work_day;
-
-    @Column(name="available_from")
     private int availableFrom;
-
-    @Column(name="available_to")
     private int availableTo;
+    private User user_id;
 
     public UserAvailabilityPermanent() {
     }
@@ -33,6 +25,20 @@ public class UserAvailabilityPermanent {
         this.availableTo = availableTo;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false)
+    public User getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(User user_id) {
+        this.user_id = user_id;
+    }
+
+    @Id
+    @Column(name = "id", nullable = false)
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
     public int getUserAvailabilityId() {
         return userAvailabilityId;
     }
@@ -41,6 +47,8 @@ public class UserAvailabilityPermanent {
         this.userAvailabilityId = userAvailabilityId;
     }
 
+    @Basic
+    @Column(name="work_day", nullable = true, length = 12)
     public String getWork_day() {
         return work_day;
     }
@@ -49,6 +57,8 @@ public class UserAvailabilityPermanent {
         this.work_day = work_day;
     }
 
+    @Basic
+    @Column(name = "available_from", nullable = true)
     public int getAvailableFrom() {
         return availableFrom;
     }
@@ -57,6 +67,8 @@ public class UserAvailabilityPermanent {
         this.availableFrom = availableFrom;
     }
 
+    @Basic
+    @Column(name = "available_to", nullable = true)
     public int getAvailableTo() {
         return availableTo;
     }
@@ -64,6 +76,7 @@ public class UserAvailabilityPermanent {
     public void setAvailableTo(int availableTo) {
         this.availableTo = availableTo;
     }
+
 
     @Override
     public String toString() {

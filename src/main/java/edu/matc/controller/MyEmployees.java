@@ -1,6 +1,9 @@
 package edu.matc.controller;
 
 import edu.matc.entity.User;
+import edu.matc.persistence.GenericServiceImpl;
+import edu.matc.persistence.HibernateUtil;
+import edu.matc.persistence.IGenericService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,7 +29,13 @@ public class MyEmployees extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
+        IGenericService<User> userService;
+        userService = new GenericServiceImpl<>(
+                User.class, HibernateUtil.getSessionFactory());
 
+        List<User> users = userService.getAll();
+
+        req.setAttribute("allUsers", users);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/myEmployees.jsp");
         dispatcher.forward(req, resp);
     }
