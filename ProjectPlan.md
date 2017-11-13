@@ -38,46 +38,47 @@
 ### Week 5
 
 - [X] Time log entries
-- [X] Create DAO for employees
-- [ ] Create DAO for schedules
-- [ ] Create DAO for stores
+- [X] Create Generic DAO
 - [ ] Create display schedules
 - [ ] Create display schedules functionality
-- [ ] Add tests for new functionality
+- [X] Add tests for new functionality
 
 ### Week 6
 - [X] Time log entries
 - [X] Add authentication
 - [ ] Create add store  functionality
-- [ ] Create add employee functionality
+- [X] Create add/remove employee functionality
 
 ### Week 7
-- [ ] Time log entries
-- [ ] Add search functionality
+- [X] Time log entries
 - [ ] Determine how to add paging of search results
+- [X] Add Calendar DatePicker(Bootstrap & jQuery)
 
 ### Week 8
-- [ ] Time log entries
-- [ ] Implement paging of search results
-- [ ] Code review
+- [x] Time log entries
+- [X] Code review
 
 ### Week 9
-- [ ] Time log entries
-- [ ] Create databse
-- [] Set up authentication and db access
-- [ ] Add password reset/reminder function
+- [X] Time log entries
+- [X] Create databse
+- [X] Set up authentication and db access
 
 ### Week 10
-- [] Time log entries
+- [X] Time log entries
+- [X] Implement Holiday API
+- [X] Add the feature to save availability in the DB
 
 ### Week 11
 - [] Time log entries
+- []
 
 ### Week 12
 - [ ] Time log entries
+- []
 
 ### Week 13
 - [] Time log entries
+- [] Use QAPlugin to check code quality
 
 ### Week 14
 - [ ] Time log entries
@@ -87,8 +88,6 @@
 - [ ] Final Presentation
 - [ ] Time log entries
 
-### Week 16
-- [ ] Time log entries
 
 
 

@@ -21,7 +21,7 @@
                     <h4 class="modal-title">Create New Employee</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" action="/createNewUser" method="GET">
+                    <form class="form-horizontal" action="createNewUser" method="GET">
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="userName">User Name:</label>
                             <div class="col-sm-9">
@@ -81,7 +81,7 @@
                     <td>${user.lastName}</td>
                     <td>${user.jobTitle}</td>
                     <td>${user.performance}</td>
-                    <td><a href="/deleteUser?userId=${user.userid}" class="glyphicon glyphicon-trash"></a> | <a href="" class="glyphicon glyphicon-pencil"></td>
+                    <td><a href="deleteUser?userId=${user.userid}" class="glyphicon glyphicon-trash"></a> | <a href="" class="glyphicon glyphicon-pencil"></td>
                 </tr>
             </c:forEach>
             </tbody>

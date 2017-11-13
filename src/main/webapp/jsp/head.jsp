@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.44/js/bootstrap-datetimepicker.min.js"></script>
 
-    <script src="./../js/datePicker.js"></script>
-    <script src="./../js/hourPicker.js"></script>
+    <script src="./js/datePicker.js"></script>
+    <script src="./js/hourPicker.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>

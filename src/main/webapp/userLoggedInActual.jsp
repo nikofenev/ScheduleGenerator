@@ -4,13 +4,13 @@
     </div>
 </div>
 <div class="container">
-    <form action="./logOut" method="GET">
+    <form action="logOut" method="GET">
         <button class="btn btn-danger logOut" type="submit">Log Out</button>
     </form>
 </div>
 <div class="container">
     <h3></h3>
-        <form class="form-horizontal" action="/saveAvailability" method="POST">
+        <form class="form-horizontal" action="saveAvailability" method="POST">
             <div class="form-group">
                 <div class="input-group selectWeek date">
                     <input type="text" class="form-control selectWeek" id="weeklyDatePicker" placeholder="Select Week"  />
