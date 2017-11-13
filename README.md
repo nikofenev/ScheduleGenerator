@@ -1,6 +1,8 @@
 # Schedu v1.0 (Schedule Generator)
  Schedule Generator based on availability, store hours and shifts needed.
 
+[Demo](http://13.59.240.180:8080/Schedu/): Login as Manager:	Username: admin
+	  					Password: admin
 ### Problem Statement 
 It is hard to believe that in 2017 there are workplaces that still use Excel for creating their schedules. There are few alternative softwares on the market, but most ScheduleGenerators are part of a bigger software package that a company must purchase in order to use just this one function. Schedule Generator will do exactly that, focus on creating employee schedules based on their availability.
 
