@@ -20,3 +20,18 @@
 | 10/01/17 | added more tables to db | 3 | |
 | 10/03/17 | added user authentication locally | 3 | |
 | 10/03/17 | added user authentication on AWS | 3 | | 
+| 10/10/17 | Created Generic DAO | 3 | | 
+| 10/10/17 | Tests pass the generic Dao | 2 | |
+| 10/17/17 | Created Date Picker to save availability | 3 | | 
+| 10/20/17 | Saving availability is now working | 3 | |
+| 10/26/17 | Creted the JSP for adding new USER/EMPLOYEE | 4 | | 
+| 10/30/17 | Deleting user from DB is working | 4 | | 
+| 11/10/17 | Implemented Holiday API | 5 | | 
+
+
+
+ 
+ 
+
+
+
