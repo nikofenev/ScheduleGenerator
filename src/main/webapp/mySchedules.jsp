@@ -1,0 +1,1 @@
+<%@include file="jsp/taglib.jsp" %><c:import url="jsp/head.jsp"/><html><title>My Schedules</title><body><c:import url="mySchedulesActual.jsp"/></body></html>

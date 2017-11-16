@@ -4,10 +4,11 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.ManyToAny;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "userAvailabilityPermanent")
-public class UserAvailabilityPermanent {
+public class UserAvailabilityPermanent implements Serializable {
 
     private int userAvailabilityId;
     private String work_day;

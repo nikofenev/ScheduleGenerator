@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author nfenev
  */
 @Entity(name = "users")
-public class User {
+public class User implements Serializable{
     @Column(name = "first_name")
     private String firstName;
 
