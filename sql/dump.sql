@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for osx10.12 (x86_64)
 --
--- Host: 127.0.0.1    Database: teamProject
+-- Host: 127.0.0.1    Database: schedu
 -- ------------------------------------------------------
 -- Server version	5.7.17
 
@@ -16,31 +16,172 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `decisions`
+-- Table structure for table `storeShifts`
 --
 
-DROP TABLE IF EXISTS `decisions`;
+DROP TABLE IF EXISTS `storeShifts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `decisions` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `answer` varchar(255) NOT NULL,
-  `crude` varchar(15) DEFAULT NULL,
-  `irritated` varchar(15) DEFAULT NULL,
-  `indecisive` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+CREATE TABLE `storeShifts` (
+  `id` int(11) NOT NULL,
+  `work_day` varchar(12) NOT NULL,
+  `start_time` decimal(4,2) NOT NULL,
+  `end_time` decimal(4,2) NOT NULL,
+  `job_title` varchar(15) DEFAULT NULL,
+  `store_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_stores` (`store_id`),
+  CONSTRAINT `fk_stores` FOREIGN KEY (`store_id`) REFERENCES `stores` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `decisions`
+-- Dumping data for table `storeShifts`
 --
 
-LOCK TABLES `decisions` WRITE;
-/*!40000 ALTER TABLE `decisions` DISABLE KEYS */;
-INSERT INTO `decisions` VALUES (1,'what are you thinking','false','true','true'),(2,'shove a banana in it','true','false','false'),(3,'not right now','false','true','false'),(4,'what do you think','false','true','true'),(5,'ask someone else','true','false','true'),(6,'dont ask me now','true','false','true'),(7,'maybe next time','true','false','true'),(8,'go away now','false','true','true'),(9,'why would you ask me','false','true','true'),(10,'you will get your answer next time','false','true','true'),(11,'not happening for you','true','true','false'),(12,'not today its not','true','true','false'),(13,'the answer is no','true','true','false'),(14,'i dont know','false','false','true'),(15,'you tell me','false','false','true'),(16,'ask me next time','false','false','true'),(17,'no way','true','false','false'),(18,'absolutly not','true','false','false'),(19,'oh god no!!!','true','false','false'),(20,'im busy','false','true','false'),(21,'get outta here','false','true','false'),(22,'shoo!!!','false','true','false'),(23,'why dont you figure it out yourself','true','true','true'),(24,'IDK, get out of my face','true','true','true'),(25,'its a DBA error','true','true','true'),(26,'oraerror-04031','true','true','true');
-/*!40000 ALTER TABLE `decisions` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `storeShifts` VALUES (1,'monday',10.00,16.00,'server',1);
+
+--
+-- Table structure for table `stores`
+--
+
+DROP TABLE IF EXISTS `stores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `stores` (
+  `id` int(11) NOT NULL,
+  `store_name` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `stores`
+--
+
+INSERT INTO `stores` VALUES (1,'Thirsty Buffalo');
+
+--
+-- Table structure for table `userAvailabilityPermanent`
+--
+
+DROP TABLE IF EXISTS `userAvailabilityPermanent`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `userAvailabilityPermanent` (
+  `id` int(7) NOT NULL,
+  `work_day` varchar(12) NOT NULL,
+  `available_from` int(2) NOT NULL,
+  `available_to` int(2) NOT NULL,
+  `users_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `userAvailability_users` (`users_id`),
+  CONSTRAINT `userAvailability_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `userAvailabilityPermanent`
+--
+
+INSERT INTO `userAvailabilityPermanent` VALUES (1,'sunday',10,5,2),(2,'monday',10,9,2),(3,'tuesday',1,9,2),(4,'wednesday',5,10,2),(5,'thursday',10,10,2),(6,'friday',10,10,2),(7,'saturday',10,10,2);
+
+--
+-- Table structure for table `userAvailabilityTemporary`
+--
+
+DROP TABLE IF EXISTS `userAvailabilityTemporary`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `userAvailabilityTemporary` (
+  `id` int(11) NOT NULL,
+  `work_date` date NOT NULL,
+  `available_from` int(2) NOT NULL,
+  `available_to` int(2) NOT NULL,
+  `day_off` tinyint(1) NOT NULL,
+  `users_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `userAvailabilityTemporary_users` (`users_id`),
+  CONSTRAINT `userAvailabilityTemporary_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `userAvailabilityTemporary`
+--
+
+
+--
+-- Table structure for table `userSchedule`
+--
+
+DROP TABLE IF EXISTS `userSchedule`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `userSchedule` (
+  `id` int(7) NOT NULL,
+  `start_work` int(2) NOT NULL,
+  `end_work` int(2) NOT NULL,
+  `work_date` date NOT NULL,
+  `users_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `userSchedule_users` (`users_id`),
+  CONSTRAINT `userSchedule_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `userSchedule`
+--
+
+
+--
+-- Table structure for table `user_roles`
+--
+
+DROP TABLE IF EXISTS `user_roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_roles` (
+  `user_name` varchar(15) NOT NULL,
+  `role_name` varchar(15) NOT NULL,
+  `users_id` int(11) NOT NULL,
+  PRIMARY KEY (`user_name`,`role_name`),
+  KEY `user_roles_users` (`users_id`),
+  CONSTRAINT `user_roles_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_roles`
+--
+
+INSERT INTO `user_roles` VALUES ('admin','administrator',1),('niko','registered-user',2),('t','administrator',3);
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `user_name` varchar(15) NOT NULL,
+  `user_pass` varchar(15) NOT NULL,
+  `first_name` varchar(30) NOT NULL,
+  `last_name` varchar(30) NOT NULL,
+  `job_title` varchar(20) NOT NULL,
+  `performance` int(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` VALUES (1,'admin','admin','Admin','Adminov','manager',5),(2,'niko','niko','Nikolay','Fenev','bartender',5),(3,'t','t','t','t','manager',0);
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -51,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-01 19:15:35
+-- Dump completed on 2017-11-16  7:20:58

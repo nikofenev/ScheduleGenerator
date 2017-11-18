@@ -96,7 +96,7 @@ REFERENCES stores (id);
 
 -- Reference: storeShifts_shiftsPermanent (table: storeShifts)
 ALTER TABLE storeShifts ADD CONSTRAINT storeShifts_shiftsPermanent FOREIGN KEY storeShifts_shiftsPermanent (shiftsPermanent_id)
-REFERENCES shiftsPermanent (id);
+REFERENCES storeShifts (id);
 
 -- Reference: storeShifts_stores (table: storeShifts)
 ALTER TABLE storeShifts ADD CONSTRAINT storeShifts_stores FOREIGN KEY storeShifts_stores (stores_id)
