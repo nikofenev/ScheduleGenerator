@@ -32,14 +32,13 @@ CREATE TABLE `storeShifts` (
   PRIMARY KEY (`id`),
   KEY `fk_stores` (`store_id`),
   CONSTRAINT `fk_stores` FOREIGN KEY (`store_id`) REFERENCES `stores` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `storeShifts`
 --
 
-INSERT INTO `storeShifts` VALUES (1,'monday',10.00,16.00,'server',1);
 
 --
 -- Table structure for table `stores`
@@ -52,14 +51,14 @@ CREATE TABLE `stores` (
   `id` int(11) NOT NULL,
   `store_name` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `stores`
 --
 
-INSERT INTO `stores` VALUES (1,'Thirsty Buffalo');
+INSERT INTO `stores` VALUES (1,'Thirsty Buffalo'),(2,'Survivors'),(3,'Tap Room');
 
 --
 -- Table structure for table `userAvailabilityPermanent`
@@ -77,7 +76,7 @@ CREATE TABLE `userAvailabilityPermanent` (
   PRIMARY KEY (`id`),
   KEY `userAvailability_users` (`users_id`),
   CONSTRAINT `userAvailability_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +102,7 @@ CREATE TABLE `userAvailabilityTemporary` (
   PRIMARY KEY (`id`),
   KEY `userAvailabilityTemporary_users` (`users_id`),
   CONSTRAINT `userAvailabilityTemporary_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +126,7 @@ CREATE TABLE `userSchedule` (
   PRIMARY KEY (`id`),
   KEY `userSchedule_users` (`users_id`),
   CONSTRAINT `userSchedule_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,7 +148,7 @@ CREATE TABLE `user_roles` (
   PRIMARY KEY (`user_name`,`role_name`),
   KEY `user_roles_users` (`users_id`),
   CONSTRAINT `user_roles_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +173,7 @@ CREATE TABLE `users` (
   `job_title` varchar(20) NOT NULL,
   `performance` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -182,6 +181,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` VALUES (1,'admin','admin','Admin','Adminov','manager',5),(2,'niko','niko','Nikolay','Fenev','bartender',5),(3,'t','t','t','t','manager',0);
+INSERT INTO `storeShifts` VALUES (1,'monday',10.00,16.00,'server',1),(2,'monday',10.00,16.00,'bartender',2),(3,'monday',10.00,16.00,'cook',2),(4,'monday',16.00,22.00,'cook',2),(5,'monday',10.00,17.00,'cook',3),(6,'monday',10.00,17.00,'server',3),(7,'monday',10.00,17.00,'bartender',3),(8,'monday',10.00,17.00,'cook',1),(9,'monday',17.00,22.00,'bartender',1);
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -192,4 +193,4 @@ INSERT INTO `users` VALUES (1,'admin','admin','Admin','Adminov','manager',5),(2,
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-16  7:20:58
+-- Dump completed on 2017-11-18 13:40:35
