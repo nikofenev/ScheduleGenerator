@@ -13,10 +13,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-/** Servlet for admin.
+/**
+ * Servlet for admin.
+ *
  * @author nfenev
  */
-
 @WebServlet(
         urlPatterns = {"/welcomeAdmin"}
 )

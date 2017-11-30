@@ -2,12 +2,23 @@ package edu.matc.entity;
 
 import org.apache.log4j.Logger;
 
+/**
+ * The type Drop down with all hours.
+ */
 public class DropDownWithAllHours {
 
+    /**
+     * The The whole list.
+     */
     StringBuilder theWholeList;
     private final Logger logger = Logger.getLogger(this.getClass());
 
 
+    /**
+     * Drop down list with hours string builder.
+     *
+     * @return the string builder
+     */
     public StringBuilder dropDownListWithHours() {
         theWholeList = new StringBuilder();
         int hourAM = 0;

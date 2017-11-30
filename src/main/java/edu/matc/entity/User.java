@@ -47,10 +47,12 @@ public class User implements Serializable{
     /**
      * Instantiates a new User.
      *
-     * @param firstName the first name
-     * @param lastName  the last name
-     * @param userid    the userid
-     * @param jobTitle  the jobTitle
+     * @param firstName   the first name
+     * @param lastName    the last name
+     * @param userid      the userid
+     * @param userName    the user name
+     * @param userPass    the user pass
+     * @param jobTitle    the jobTitle
      * @param performance performance
      */
     public User(String firstName, String lastName, int userid, String userName, String userPass, String jobTitle, int performance) {
@@ -120,6 +122,7 @@ public class User implements Serializable{
 
     /**
      * Gets userName.
+     *
      * @return the userName
      */
     public String getUserName() {
@@ -128,6 +131,7 @@ public class User implements Serializable{
 
     /**
      * Sets userName.
+     *
      * @param userName the userName
      */
     public void setUserName(String userName) {
@@ -136,7 +140,8 @@ public class User implements Serializable{
 
     /**
      * Gets the userPass.
-     * @return userPass
+     *
+     * @return userPass user pass
      */
     public String getUserPass() {
         return userPass;
@@ -144,6 +149,7 @@ public class User implements Serializable{
 
     /**
      * Sets the userPass.
+     *
      * @param userPass the userPass
      */
     public void setUserPass(String userPass) {
@@ -152,7 +158,8 @@ public class User implements Serializable{
 
     /**
      * Gets the setJobTitle.
-     * @return jobTitle
+     *
+     * @return jobTitle job title
      */
     public String getJobTitle() {
         return jobTitle;
@@ -160,6 +167,7 @@ public class User implements Serializable{
 
     /**
      * Sets the userPass.
+     *
      * @param jobTitle the userPass
      */
     public void setJobTitle(String jobTitle) {
@@ -168,7 +176,8 @@ public class User implements Serializable{
 
     /**
      * Gets the performance.
-     * @return performance
+     *
+     * @return performance performance
      */
     public int getPerformance() {
         return performance;

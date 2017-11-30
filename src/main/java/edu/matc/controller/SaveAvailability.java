@@ -16,11 +16,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
-/** Servlet for the index
- *  web page.
+/**
+ * Servlet for the index
+ * web page.
+ *
  * @author nfenev
  */
-
 @WebServlet(
         urlPatterns = {"/saveAvailability"}
 )

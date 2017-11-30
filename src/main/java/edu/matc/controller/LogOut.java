@@ -8,10 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-/** Servlet for LogOut.
+/**
+ * Servlet for LogOut.
+ *
  * @author nfenev
  */
-
 @WebServlet(
         urlPatterns = {"/logOut"}
 )

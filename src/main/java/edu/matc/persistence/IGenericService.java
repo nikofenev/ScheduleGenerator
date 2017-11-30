@@ -1,1 +1,1 @@
-package edu.matc.persistence;import java.util.List;public interface IGenericService<T> extends IGenericDAO<T> {    List<T> getAll();    void deleteAll();}
+package edu.matc.persistence;import java.util.List;/** * The interface Generic service. * * @param <T> the type parameter */public interface IGenericService<T> extends IGenericDAO<T> {    /**     * Gets all.     *     * @return the all     */    List<T> getAll();    /**     * Delete all.     */    void deleteAll();}

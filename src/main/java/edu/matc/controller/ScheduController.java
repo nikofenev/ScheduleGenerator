@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-
-/** Servlet for the index
- *  web page.
+/**
+ * Servlet for the index
+ * web page.
+ *
  * @author nfenev
  */
-
 @WebServlet(
     urlPatterns = {"/homePage"}
 )

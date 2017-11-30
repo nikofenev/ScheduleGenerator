@@ -11,10 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-/** Servlet for user.
+/**
+ * Servlet for user.
+ *
  * @author nfenev
  */
-
 @WebServlet(
         urlPatterns = {"/welcomeUser"}
 )

@@ -15,10 +15,11 @@ import java.io.IOException;
 import java.util.List;
 
 
-/** Servlet for myEmployees
+/**
+ * Servlet for myEmployees
+ *
  * @author nfenev
  */
-
 @WebServlet(
         urlPatterns = {"/myEmployees"}
 )
