@@ -5,6 +5,11 @@
     </div>
 </div>
 <div class="container">
+    <form action="./logOut" method="GET">
+        <button class="btn btn-danger logOut" type="submit">Log Out</button>
+    </form>
+</div>
+<div class="container">
     <div class="row">
         <div class="createNewEmployee">
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Create New Employee</button>
