@@ -6,8 +6,6 @@ It is hard to believe that in 2017 there are workplaces that still use Excel for
 
 Shedu  will automatically generate schedules each week, based on store hours, shifts needed, and employee availability.
 
-[Video Demo](https://www.youtube.com/watch?v=8j1kq1fPAX8)
-
 ### Project Technologies/Techniques 
 
 * Security/Authentication
